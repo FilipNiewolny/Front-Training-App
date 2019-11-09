@@ -3,9 +3,11 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { ErrorComponent } from './error/error.component';
-import { ExercisesComponent } from './exercises/exercises.component';
 import { LogoutComponent } from './logout/logout.component';
 import { RouteGuardService } from './service/route-guard.service';
+import { ListExercisesComponent } from './list-exercises/List-exercises.component';
+import { ExerciseComponent } from './exercise/exercise.component';
+
 
 //welcome
 const routes: Routes = [
@@ -13,7 +15,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'welcome/:name', component: WelcomeComponent , canActivate:[RouteGuardService]},
   { path: 'welcome', component: WelcomeComponent },
-  { path: 'exercises', component: ExercisesComponent , canActivate:[RouteGuardService] },
+  { path: 'list/exercise', component: ListExercisesComponent , canActivate:[RouteGuardService] },
+  { path: 'exercise/:id', component: ExerciseComponent, canActivate:[RouteGuardService]  },
   { path: 'logout', component: LogoutComponent },
   { path: '**', component: ErrorComponent }
 

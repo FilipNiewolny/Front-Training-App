@@ -1,0 +1,25 @@
+<h1>All Exercises</h1>
+<div class="container">
+    <div class="alert alert-success" *ngIf='message'>{{message}}</div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nazwa</th>
+        <th>Opis</th>
+        <th>Mięśnie</th>
+        <th>Usuń</th>
+        <th>Edytuj</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let exercise of exercises">
+        <td>{{exercise.name}}</td>
+        <td>{{exercise.description}}</td>
+        <td>{{exercise.muscle}}</td>
+        <td><button (click)="deleteExercise(exercise.id)" class='btn btn-warning'>Usuń</button></td>
+        <td><button (click)="updateExercise(exercise.id)" class='btn btn-success'>Edytuj</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div> 
