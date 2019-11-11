@@ -1,7 +1,7 @@
 <h1>All Exercises</h1>
 <div class="container">
     <div class="alert alert-success" *ngIf='message'>{{message}}</div>
-
+    <div class="alert alert-success" *ngIf='messageSuccess'>{{messageSuccess}}</div>
   <table class="table">
     <thead>
       <tr>
@@ -22,4 +22,7 @@
       </tr>
     </tbody>
   </table>
-</div> 
+  <div class = "row">
+    <td><button (click)="addExercise()" class='btn btn-success'>Add</button></td>
+</div>
+<div>

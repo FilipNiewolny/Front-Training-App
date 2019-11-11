@@ -32,6 +32,7 @@ import { ExerciseComponent } from './exercise/exercise.component';
     FormsModule,
     HttpClientModule
   ],
+
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -1,19 +1,21 @@
 <h1>Exercise</h1>
+<div class="alert alert-warning" *ngIf='invalidPostMethod'>{{errorMessage}}</div>
 <div class="container">
+  <form (ngSubmit)="saveExercise()" #exerciseForm="ngForm">
   <fieldset class="form-group">
-    <label>Nazwa</label>
-    <input type="text" class="form-control"     name="name" 
-    required="required"
-    [(ngModel)] = exercise.name
-    placeholder="{{exercise.name}}">
+    <label>Nazwa </label>
+    <input type="text" class="form-control" required="required" [(ngModel)] ="exercise.name" value="{{exercise.name}}" name="name">
   </fieldset>
   <fieldset class="form-group">
     <label>Opis</label>
-    <input type="text" class="form-control" name="description" required="required">
+    <input type="text" class="form-control"  required="required" [(ngModel)] = "exercise.description" value="{{exercise.description}}" name="description">
   </fieldset>
   <fieldset class="form-group">
-    <label>Mięśnie</label>
-    <input type="text" class="form-control" name="muscle" required="required">
-  </fieldset>
-  <button class="btn btn-success" (click)="saveExercise()">Zapisz</button>
-</div>
+  <label>Mięśnie</label><br>
+    <select name ="muscle" [(ngModel)] = exercise.muscle form="form-group" name="muscle">
+        <option *ngFor="let muscle of muscles"  >{{muscle}}</option>
+    </select>
+</fieldset>
+ <button type="submit" class="btn btn-success">Zapisz</button>
+   </form>
+ </div>

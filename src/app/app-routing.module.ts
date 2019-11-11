@@ -16,6 +16,7 @@ const routes: Routes = [
   { path: 'welcome/:name', component: WelcomeComponent , canActivate:[RouteGuardService]},
   { path: 'welcome', component: WelcomeComponent },
   { path: 'list/exercise', component: ListExercisesComponent , canActivate:[RouteGuardService] },
+  { path: 'list/exercise/:messageSuccess', component: ListExercisesComponent , canActivate:[RouteGuardService] },
   { path: 'exercise/:id', component: ExerciseComponent, canActivate:[RouteGuardService]  },
   { path: 'logout', component: LogoutComponent },
   { path: '**', component: ErrorComponent }
